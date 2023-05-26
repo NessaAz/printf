@@ -1,3 +1,1 @@
-# prinf
-
-## Tracey Kaburu & Vanessa Azenwa
+ALX printf project done by Tracey Kaburu & Vanessa Azenwa
