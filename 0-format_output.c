@@ -3,7 +3,7 @@
 /**
  * _printf - produces output according to a format
  * @format: is a character string
- * Return: number of characters printed - num_char
+ * Return: number of characters printed - count_of_characters
 */
 int _printf(const char *format, ...)
 {
@@ -34,11 +34,11 @@ int _printf(const char *format, ...)
             switch (character)
             {
             case 'c':
-                //_putchar("%c", c);
+                _putchar(va_arg(args, int));
                 count_of_characters++;
                 break;
             case 's':
-
+                
                 break;
             case '%':
 
