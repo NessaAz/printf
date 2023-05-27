@@ -38,14 +38,18 @@ int _printf(const char *format, ...)
                 count_of_characters++;
                 break;
             case 's':
-                
+                string = va_arg(args, char *);
+                count_of_characters++;
                 break;
             case '%':
-
+                putchar('%');
+                count_of_characters++;
                 break;
             
             default:
-                return;
+                putchar('%');
+                count_of_characters++;
+                break;
             }
         }
     }
