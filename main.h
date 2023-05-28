@@ -6,5 +6,7 @@
 
 int _putchar(char c);
 int _printf(const char *format, ...);
+int puts_str(char *string); /*it will help print 's' */
+
 
 #endif
