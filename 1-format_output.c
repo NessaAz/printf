@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 
 	t = 0;
 
-	while (format[t] != "\0")
+	while (format[t] != '\0')
 	{
 		if (format[t] != "%")
 		{
@@ -34,15 +34,14 @@ int _printf(const char *format, ...)
 		else if (format[t + 1] == 's')
 		{
 			puts_str(va_arg(args, char *));
-			t++;
-			value += (value - 1); 
+			t++; 
 		}
 		else if (format[t + 1] == '%')
 		{
 			_putchar('%');
 			t++;
 		}
-		value += 1;
+		value ++;
 		t++;
 	}
 	va_end(args);
