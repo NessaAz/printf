@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
         else
         {
             format++;
-            character = format;
+            character = *format;
             switch (character)
             {
             case 'c':
@@ -42,17 +42,19 @@ int _printf(const char *format, ...)
                 count_of_characters++;
                 break;
             case '%':
-                putchar('%');
+                _putchar('%');
                 count_of_characters++;
                 break;
             
             default:
-                putchar('%');
-                count_of_characters++;
+                _putchar('%');
+                _putchar(character);
+                count_of_characters += 2;
                 break;
             }
         }
     }
+    va_end(args);
 
     return (count_of_characters);
 }
