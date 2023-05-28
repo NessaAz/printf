@@ -39,7 +39,15 @@ int _printf(const char *format, ...)
 				break;
 			case 's':
 				string = va_arg(args, char *);
-				count_of_characters++;
+				/* check if string is null */
+				if (string == NULL)
+					string = "(null)";
+				while (*string)
+				{
+					_putchar(*string);
+					count_of_characters++;
+					string++;
+				}
 				break;
 			case '%':
 				_putchar('%');
@@ -53,6 +61,7 @@ int _printf(const char *format, ...)
 				break;
 			}
 		}
+		format++;
 	}
 	va_end(args);
 
