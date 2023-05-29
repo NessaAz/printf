@@ -9,7 +9,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	unsigned value, t; /* value is the return value*/
+	unsigned int value, t; /* value is the return value*/
 
 	va_start(args, format);
 
@@ -17,12 +17,13 @@ int _printf(const char *format, ...)
 
 	while (format[t] != '\0')
 	{
-		if (format[t] != "%")
+		if (format[t] != '%')
 		{
 			_putchar(format[t]);
 		}
 
-		/** the format[t + 1] is used to check what the next char is 
+		/**
+		 * the format[t + 1] is used to check what the next char is
 		 * in the string. if it is a 'c', 's' etc
 		 */
 
@@ -34,14 +35,14 @@ int _printf(const char *format, ...)
 		else if (format[t + 1] == 's')
 		{
 			puts_str(va_arg(args, char *));
-			t++; 
+			t++;
 		}
 		else if (format[t + 1] == '%')
 		{
 			_putchar('%');
 			t++;
 		}
-		value ++;
+		value++;
 		t++;
 	}
 	va_end(args);
