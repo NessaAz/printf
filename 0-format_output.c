@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 	/* loop through format and *format to ensure they are not null*/
 	while (*format && format)
 	{    
-		if (format != '%')
+		if (format[count_of_characters] != '%')
 			{
 			/*checks if each char in the !=% and prints*/
 			_putchar(format[count_of_characters]);
