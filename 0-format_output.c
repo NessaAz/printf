@@ -1,6 +1,4 @@
 #include "main.h"
-#include <stdarg.h>
-#include <stdio.h>
 
 /**
  * _printf - produces output according to a format
@@ -21,12 +19,12 @@ int _printf(const char *format, ...)
 	/*if characters before NULL, print their count*/
 
 	/* loop through format and *format to ensure they are not null*/
-	while (*format && format)
+	while (*format)
 	{    
-		if (format[count_of_characters] != '%')
+		if (*format != '%')
 			{
 			/*checks if each char in the !=% and prints*/
-			_putchar(format[count_of_characters]);
+			_putchar(*format);
 			count_of_characters++;
 			}
 		else
@@ -36,7 +34,7 @@ int _printf(const char *format, ...)
 			switch (character)
 		{
 			case 'c':
-			_putchar(va_arg(args, int));
+				_putchar(va_arg(args, int));
 				count_of_characters++;
 				break;
 			case 's':
@@ -44,18 +42,13 @@ int _printf(const char *format, ...)
 				/* check if string is null */
 				if (string == NULL)
 					string = " ";
-				while (*string)
-				{
-					_putchar(*string);
-					count_of_characters++;
-					string++;
-				}
+				print_string(string);
+				count_of_characters += strlen(string);
 				break;
 			case '%':
 				_putchar('%');
 				count_of_characters++;
 				break;
-            
 			default:
 				_putchar('%');
 				_putchar(character);
