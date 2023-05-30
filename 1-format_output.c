@@ -21,11 +21,7 @@ int _printf(const char *format, ...)
 		{
 			_putchar(format[t]);
 		}
-
-		/**
-		 * the format[t + 1] is used to check what the next char is
-		 * in the string. if it is a 'c', 's' etc
-		 */
+		/*the format[t + 1] is used to check the next char*/
 
 		else if (format[t + 1] == 'c')
 		{
@@ -42,10 +38,14 @@ int _printf(const char *format, ...)
 			_putchar('%');
 			t++;
 		}
+		else if (format[t + 1] == 'd' || format[t + 1] == 'i')
+		{
+			int_check(va_arg(args, int);
+			t++;
+		}
 		value++;
 		t++;
 	}
 	va_end(args);
-
 	return (value);
 }
