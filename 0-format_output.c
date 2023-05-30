@@ -41,7 +41,7 @@ int _printf(const char *format, ...)
 				string = va_arg(args, char *);
 				/* check if string is null */
 				if (string == NULL)
-					string = "(null)";
+					string = " ";
 				while (*string)
 				{
 					_putchar(*string);
