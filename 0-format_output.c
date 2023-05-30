@@ -5,6 +5,7 @@
  * @format: is a character string
  * Return: number of characters printed - count_of_characters
 */
+
 int _printf(const char *format, ...)
 {
 	/* remember betty */
