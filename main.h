@@ -6,12 +6,7 @@
 
 int _putchar(char c);
 int print_char (va_list arg);
-<<<<<<< HEAD
-void print_string(char *str);
-
-=======
 int bin(va_lit arg);
->>>>>>> bf0d0f789ac14e0bdd1c760f15e01391af94931d
 int _printf(const char *format, ...);
 int puts_str(char *string); /*it will help print 's' */
 int (*spec_checker(char format))(va_list);
