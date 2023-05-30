@@ -5,9 +5,14 @@
 #include <stdio.h>
 
 int _putchar(char c);
+int print_char (va_list arg);
+
 int _printf(const char *format, ...);
 int puts_str(char *string); /*it will help print 's' */
 int (*spec_checker(char format))(va_list);
+int check_flags(char x, get_flag *f);
+
+
 
 /**
  * struct flags - This structure contains the flags specifiers

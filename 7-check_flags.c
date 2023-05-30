@@ -10,22 +10,22 @@
 
 int check_flags(char x, get_flag *f)
 {
-	int t = 0, m;
+	int t = 0;
 
-	if (m == ' ')
+	if (x == ' ')
 	{
 		*(f).space = 1;
 		t = 1;
 	}
-	else if (m == '#')
+	else if (x == '#')
 	{
 		*(f).hash = 1;
 		t = 1;
 	}
-	else if (m ==  '+')
+	else if (x ==  '+')
 	{
 		*(f).plus = 1;
 		t = 1;
 	}
-	return (m);
+	return (t);
 }
