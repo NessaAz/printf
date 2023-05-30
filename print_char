@@ -1,13 +1,14 @@
 #include "main.h"
 
 /**
-* print char -  This function prints out char
-* "arg: These are rgument within the function
+* print_char -  This function prints out char
+* @arg: These are rgument within the function
 *
 *Return: The char printed
 */
 
-int print char (va_list arg)
+int print_char (va_list arg)
 {
 	_putchar(var_arg(arg, int));
 	return (1);
+}
