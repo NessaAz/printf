@@ -6,7 +6,7 @@
 
 int _putchar(char c);
 int print_char (va_list arg);
-
+int bin(va_lit arg);
 int _printf(const char *format, ...);
 int puts_str(char *string); /*it will help print 's' */
 int (*spec_checker(char format))(va_list);
