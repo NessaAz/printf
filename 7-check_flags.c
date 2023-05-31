@@ -14,17 +14,30 @@ int check_flags(char x, get_flag *f)
 
 	if (x == ' ')
 	{
-		*(f).space = 1;
+		f->space = 1;
 		t = 1;
 	}
 	else if (x == '#')
 	{
-		*(f).hash = 1;
+		f->hash = 1;
 		t = 1;
 	}
 	else if (x ==  '+')
 	{
-		*(f).plus = 1;
+		f->plus = 1;
+		t = 1;
+	}
+	
+	/*  flag character for non-custom conversion specifiers.*/
+
+	else if (x == '0')
+	{
+		f->plus = 1;
+		t = 1;
+	}
+	else if (x == '-')
+	{
+		f->plus = 1;
 		t = 1;
 	}
 	return (t);
