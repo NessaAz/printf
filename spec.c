@@ -12,29 +12,30 @@ int (*spec_checker(char format))(va_list)
 {
 	int k = 0;
 
-	func_t spec_checker[] = {
-		{'c', print_char},
-		{'s', print_string},
-		{'d', print_int},
-		{'i', print_int},
-		{'b', print_bin},
-		{'o', print_oct},
-		{'u', print_unsigned},
-		{'x', print_hex},
-		{'X', print_HEX},
-		{'S', print_S},
-		{'p', print_ptr},
-		{'r', print_r},
-		{'R', print_R},
+	func_spec spec_checker[] = {
+		{'c', put_char},
+		{'s', put_string},
+		{'%', put_cent};
+		{'d', put_int},
+		{'i', put_int},
+		{'b', put_bin},
+		{'o', put_oct},
+		{'u', put_unsigned},
+		{'x', put_hex},
+		{'X', put_HEX},
+		{'S', put_S},
+		{'p', put_ptr},
+		{'r', put_r},
+		{'R', put_R},
+		{NULL, NULL}
 	};
-
-	while (k < 11)
-	{
-		if (spec_checker[k].spec == format)
+	/* checks for pecifier in the pointed file*/
+	do {
+		if (spec_checker[k].f == *format)
 		{
-			return (spec_checker[k].f);
+			return (spec_checker[k].t);
 		}
 		k++;
-	}
-	return (NULL);
+	} while (spec_checker[k].f != '\0')
+	return (NULL); /* Return NUULL if specifier is not found*/
 }
