@@ -2,7 +2,7 @@
 
 /**
  * spec_checker - This function check for a specifier and
- * returnsa function afterward
+ * returns a function afterward
  * @format: This is the specifier checked for
  *
  * Return: A function pointer or NULL if not found
@@ -13,7 +13,7 @@ int (*spec_checker(char format))(va_list)
 	int k = 0;
 
 	func_t spec_checker[] = {
-		{'c', ptint_char};
+		{'c', print_char},
 		{'s', print_string},
 		{'d', print_int},
 		{'i', print_int},
@@ -23,12 +23,14 @@ int (*spec_checker(char format))(va_list)
 		{'x', print_hex},
 		{'X', print_HEX},
 		{'S', print_S},
-		{'p', print_ptr}
+		{'p', print_ptr},
+		{'r', print_r},
+		{'R', print_R},
 	};
 
 	while (k < 11)
 	{
-		if (spec_checker == format)
+		if (spec_checker[k].spec == format)
 		{
 			return (spec_checker[k].f);
 		}

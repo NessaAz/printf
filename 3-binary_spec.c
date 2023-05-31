@@ -1,4 +1,4 @@
-#include "min.c"
+#include "main.h"
 
 
 /**
@@ -8,7 +8,7 @@
  * Return: binary string
  */
 
-int bin(va_lit arg)
+int bin(va_list arg)
 {
 	unsigned int t = va_arg(arg, unsigned int);
 	unsigned int temp;
@@ -21,7 +21,7 @@ int bin(va_lit arg)
 	}
 
 	/** 8 is the size of unsigned int - 1 gives it a mask*/
-	temp = 1 << (sizeof(unsigned int) * 8 - 1)
+	temp = 1 << (sizeof(unsigned int) * 8 - 1);
 
 	while (temp > 0)
 	{

@@ -11,5 +11,6 @@ void print_string(char *str)
 	do
 	{
 		_putchar(str[i]);
-	} while (str[i] != "\0");
+	}
+    while (str[i] != "\0");
 }

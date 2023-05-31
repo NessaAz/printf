@@ -19,7 +19,7 @@ int puts_str(char *string)
 			_putchar(string[index]);
 			val += 1;
 		}
-		_putchar('\n);
-		retun (val)
+		_putchar('\n');
+		return (val);
 	}
 }
