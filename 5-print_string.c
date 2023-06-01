@@ -2,6 +2,7 @@
 
 /**
  * print_string - identifier S prints string
+ * @str: string to be printed
 */
 
 void print_string(char *str)
