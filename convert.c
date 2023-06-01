@@ -11,7 +11,7 @@
 
 char converter(unsigned int n, int base, int lc)
 {
-	char buffer [50];
+	char buffer[50];
 	char *t, *k;
 
 	t = (lc)
@@ -20,9 +20,9 @@ char converter(unsigned int n, int base, int lc)
 	k = &buffer[49];
 	*k = '\0';
 
-	while(n != 0)
+	while (n != 0)
 	{
-		n /=base;
+		n /= base;
 		*--k = t[n % base];
 	}
 	return (*k);
