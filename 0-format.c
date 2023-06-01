@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 		{
 			_putchar(format[t]);
 		}
-        else if (format[t + 1] == 'd' || format[t + 1] == 'i')
+		else if (format[t + 1] == 'd' || format[t + 1] == 'i')
 		{
 			int_check(va_arg(args, int));
 			t++;
@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 			printed_char += print_rot13(va_arg(args, char *));
 			t++;
 		}
-        value++;
+		value++;
 		t++;
 	}
 	va_end(args);
