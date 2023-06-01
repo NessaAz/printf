@@ -8,9 +8,8 @@ void print_string(char *str)
 {
 	int i;
 
-	do
-	{
+	do{
 		_putchar(str[i]);
 	}
-    while (str[i] != "\0");
+	while (str[i] != "\0");
 }
