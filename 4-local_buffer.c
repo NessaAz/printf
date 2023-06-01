@@ -8,15 +8,15 @@
 
 void local_buffer(char c, int i)
 {
-    /* remember betty*/
-    i = 0;
-    char buffer[1024];
+	/* remember betty*/
+	i = 0;
+	char buffer[1024];
 
-    /* given index 1024 */
-    if (i == 1024)
-    {
-        write(1, buffer, i);
-    }
-    
-    buffer[i++];
+	/* given index 1024 */
+	if (i == 1024)
+	{
+		write(1, buffer, i);
+	}
+
+	buffer[i++];
 }
