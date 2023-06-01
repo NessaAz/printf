@@ -5,7 +5,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <unistd.h>
-#include <stdlib>
+#include <stdlib.h>
 
 int _putchar(char c);
 int put_char(va_list args);
@@ -15,6 +15,10 @@ int print_rot13(va_list arg);
 int put_string(char* strng);
 int put_unsigned(va_list args);
 int put_cent(va_list args);
+int check_flags(char x, get_flag *f);
+int (*spec_checker(char format))(va_list);
+
+
 /**
  * struct flags - This structure contains the flags specifiers
  * @plus: This represents the '+' symbol
@@ -42,7 +46,5 @@ typedef struct specifier
     int (*t)(va_list);
 } func_spec;
 
-int check_flags(char x, get_flag *f);
-int (*spec_checker(char format))(va_list);
 
 #endif

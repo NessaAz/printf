@@ -15,7 +15,7 @@ int (*spec_checker(char format))(va_list)
 	func_spec spec_checker[] = {
 		{'c', put_char},
 		{'s', put_string},
-		{'%', put_cent};
+		{'%', put_cent},
 		{'d', put_int},
 		{'i', put_int},
 		{'b', put_bin},
@@ -31,11 +31,13 @@ int (*spec_checker(char format))(va_list)
 	};
 	/* checks for pecifier in the pointed file*/
 	do {
-		if (spec_checker[k].f == *format)
+		if (spec_checker[k].f == format)
 		{
 			return (spec_checker[k].t);
 		}
 		k++;
-	} while (spec_checker[k].f != '\0')
+	}
+	while (spec_checker[k].f != '\0');
+
 	return (NULL); /* Return NUULL if specifier is not found*/
 }
