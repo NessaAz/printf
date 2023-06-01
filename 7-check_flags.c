@@ -27,7 +27,7 @@ int check_flags(char x, get_flag *f)
 		f->plus = 1;
 		t = 1;
 	}
-	
+
 	/*  flag character for non-custom conversion specifiers.*/
 
 	else if (x == '0')
