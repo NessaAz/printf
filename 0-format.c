@@ -22,24 +22,17 @@ int _printf(const char *format, ...)
 		{
 			_putchar(format[t]);
 		}
-		/*the format[t + 1] is used to check the next char*/
-
-		else if (format[t + 1] == 'c')
+        else if (format[t + 1] == 'd' || format[t + 1] == 'i')
 		{
-			_putchar(va_arg(args, int));
+			int_check(va_arg(args, int));
 			t++;
 		}
-		else if (format[t + 1] == 's')
+		else if (format[t + 1] == 'R' || format[t + 1] == 'i')
 		{
-			puts_str(va_arg(args, char *));
+			printed_char += print_rot13(va_arg(args, char *));
 			t++;
 		}
-		else if (format[t + 1] == '%')
-		{
-			_putchar('%');
-			t++;
-		}
-		value++;
+        value++;
 		t++;
 	}
 	va_end(args);
