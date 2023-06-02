@@ -12,11 +12,14 @@ int put_char(va_list args);
 int bin(va_list arg);
 int _printf(const char *format, ...);
 int print_rot13(va_list arg);
-int put_string(char *strng);
+int puts_str(char *string);
 int put_unsigned(va_list args);
 int put_cent(va_list args);
 int check_flags(char x, get_flag *f);
 int (*spec_checker(char format))(va_list);
+void put_bin(unsigned int num);
+int _custom_conversions(const char *format, va_list args);
+
 
 
 /**
