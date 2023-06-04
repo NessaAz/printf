@@ -11,5 +11,6 @@
 int put_char(va_list args)
 {
 	char t = va_arg(args, int);
+
 	return (1);
 }
