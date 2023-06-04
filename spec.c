@@ -36,8 +36,7 @@ int (*spec_checker(char format))(va_list)
 			return (spec_checker[k].t);
 		}
 		k++;
-	}
-	while (spec_checker[k].f != '\0');
+	} while (spec_checker[k].f != '\0');
 
 	return (NULL); /* Return NUULL if specifier is not found*/
 }
