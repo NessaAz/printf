@@ -1,22 +1,24 @@
 #include "main.h"
 
+#define BUFFER_SIZE 1024
+
 /**
  * local_buffer - uses local buffer to call write
  * @c: character to be written
- * @i: integer to be written
-*/
+ * @count: pointer to the count of characters written
+ * @buffer: pointer to the local buffer
+ * @buffer_index: pointer to the buffer index
+ */
 
-void local_buffer(char c, int i)
+void local_buffer(char c, int *count, char *buffer, int *buffer_index)
 {
-	/* remember betty*/
-	i = 0;
-	char buffer[1024];
+    buffer[*buffer_index] = c;
+    (*count)++;
+    (*buffer_index)++;
 
-	/* given index 1024 */
-	if (i == 1024)
-	{
-		write(1, buffer, i);
-	}
-
-	buffer[i++];
+    if (*buffer_index == BUFFER_SIZE)
+    {
+        write(1, buffer, BUFFER_SIZE);
+        *buffer_index = 0;
+    }
 }
